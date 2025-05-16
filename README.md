@@ -154,7 +154,7 @@ hostel_management/
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👥 Authors
-- **Your Name** - *Initial work* - [YourGithub](https://github.com/yourusername)
+- **Your Name** - *Initial work* - [hostel management](https://github.com/yourusername)
 
 ## 🙏 Acknowledgments
 - Bootstrap team for the amazing UI framework
@@ -163,7 +163,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - All contributors who helped with the project
 
 ## 📞 Support
-For support, email your.email@example.com or create an issue in the repository.
+For support, email hostelmanagement.email@example.com or create an issue in the repository.
 
 ---
 ⭐️ Star this repo if you find it helpful! 
