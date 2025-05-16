@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - HostelHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="admin-dashboard">
+    <nav class="admin-sidebar">
+        <div class="admin-logo">
+            <h1>HostelHub</h1>
+            <span>Admin Panel</span>
+        </div>
+        <ul class="admin-menu">
+            <li class="active">
+                <a href="#dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            </li>
+            <li>
+                <a href="#students"><i class="fas fa-user-graduate"></i> Students</a>
+            </li>
+            <li>
+                <a href="#rooms"><i class="fas fa-bed"></i> Rooms</a>
+            </li>
+            <li>
+                <a href="#bookings"><i class="fas fa-calendar-check"></i> Bookings</a>
+            </li>
+            <li>
+                <a href="#payments"><i class="fas fa-money-bill-wave"></i> Payments</a>
+            </li>
+            <li>
+                <a href="#settings"><i class="fas fa-cog"></i> Settings</a>
+            </li>
+        </ul>
+        <div class="admin-logout">
+            <button id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+    </nav>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <div class="admin-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="admin-profile">
+                <span class="admin-notification">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </span>
+                <div class="admin-user">
+                    <img src="../images/admin-avatar.svg" alt="Admin Avatar">
+                    <span>Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="admin-content">
+            <!-- Dashboard Overview -->
+            <section id="dashboard-overview" class="active-section">
+                <h2>Dashboard Overview</h2>
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <div class="stat-info">
+                            <h3>Total Students</h3>
+                            <span class="stat-number">245</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-bed"></i>
+                        <div class="stat-info">
+                            <h3>Available Rooms</h3>
+                            <span class="stat-number">32</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-calendar-check"></i>
+                        <div class="stat-info">
+                            <h3>New Bookings</h3>
+                            <span class="stat-number">18</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <div class="stat-info">
+                            <h3>Monthly Revenue</h3>
+                            <span class="stat-number">$52,750</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-tables">
+                    <div class="recent-bookings">
+                        <h3>Recent Bookings</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Room</th>
+                                    <th>Check-in</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentBookingsTable">
+                                <!-- Will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Students Section -->
+            <section id="students" class="section">
+                <h2>Student Management</h2>
+                <div class="section-header">
+                    <div class="search-box">
+                        <input type="text" id="studentSearch" placeholder="Search students...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="filter-box">
+                        <select id="roomFilter">
+                            <option value="">All Room Types</option>
+                            <option value="Single Room">Single Room</option>
+                            <option value="Double Room">Double Room</option>
+                            <option value="Triple Room">Triple Room</option>
+                            <option value="Deluxe Single">Deluxe Single</option>
+                            <option value="Premium Double">Premium Double</option>
+                            <option value="Studio Room">Studio Room</option>
+                        </select>
+                    </div>
+                    <button class="add-btn" id="addStudentBtn"><i class="fas fa-plus"></i> Add New Student</button>
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Room Type</th>
+                                <th>Room Number</th>
+                                <th>Check-in Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentsTableBody">
+                            <!-- Will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination">
+                    <button id="prevPage" class="page-btn"><i class="fas fa-chevron-left"></i></button>
+                    <span id="currentPage">Page 1</span>
+                    <button id="nextPage" class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+
+            <!-- Rooms Section -->
+            <section id="rooms" class="section">
+                <h2>Room Management</h2>
+                <div class="section-header">
+                    <div class="search-box">
+                        <input type="text" id="roomSearch" placeholder="Search rooms...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="filter-box">
+                        <select id="roomStatusFilter">
+                            <option value="">All Statuses</option>
+                            <option value="Available">Available</option>
+                            <option value="Occupied">Occupied</option>
+                            <option value="Maintenance">Maintenance</option>
+                        </select>
+                    </div>
+                    <button class="add-btn" id="addRoomBtn"><i class="fas fa-plus"></i> Add New Room</button>
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Room Number</th>
+                                <th>Type</th>
+                                <th>Floor</th>
+                                <th>Capacity</th>
+                                <th>Price/Month</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="roomsTableBody">
+                            <!-- Will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Bookings Section -->
+            <section id="bookings" class="section">
+                <h2>Booking Management</h2>
+                <div class="section-header">
+                    <div class="search-box">
+                        <input type="text" id="bookingSearch" placeholder="Search bookings...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="filter-box">
+                        <select id="bookingStatusFilter">
+                            <option value="">All Statuses</option>
+                            <option value="Confirmed">Confirmed</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                    <button class="add-btn" id="addBookingBtn"><i class="fas fa-plus"></i> New Booking</button>
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Booking ID</th>
+                                <th>Student</th>
+                                <th>Room</th>
+                                <th>Check-in</th>
+                                <th>Duration</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bookingsTableBody">
+                            <!-- Will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Payments Section -->
+            <section id="payments" class="section">
+                <h2>Payment Management</h2>
+                <div class="section-header">
+                    <div class="search-box">
+                        <input type="text" id="paymentSearch" placeholder="Search payments...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="filter-box">
+                        <select id="paymentStatusFilter">
+                            <option value="">All Statuses</option>
+                            <option value="Paid">Paid</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Overdue">Overdue</option>
+                        </select>
+                    </div>
+                    <button class="add-btn" id="addPaymentBtn"><i class="fas fa-plus"></i> Record Payment</button>
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Payment ID</th>
+                                <th>Student</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                <th>Method</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="paymentsTableBody">
+                            <!-- Will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="section">
+                <h2>System Settings</h2>
+                <div class="settings-grid">
+                    <div class="settings-card">
+                        <h3>General Settings</h3>
+                        <form id="generalSettingsForm">
+                            <div class="form-group">
+                                <label>Hostel Name</label>
+                                <input type="text" id="hostelName" value="HostelHub">
+                            </div>
+                            <div class="form-group">
+                                <label>Admin Email</label>
+                                <input type="email" id="adminEmail" value="admin@hostelhub.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Contact Number</label>
+                                <input type="tel" id="contactNumber" value="+1 234 567 890">
+                            </div>
+                            <button type="submit" class="save-btn">Save Changes</button>
+                        </form>
+                    </div>
+                    <div class="settings-card">
+                        <h3>Security Settings</h3>
+                        <form id="securitySettingsForm">
+                            <div class="form-group">
+                                <label>Change Password</label>
+                                <input type="password" id="currentPassword" placeholder="Current Password">
+                                <input type="password" id="newPassword" placeholder="New Password">
+                                <input type="password" id="confirmPassword" placeholder="Confirm New Password">
+                            </div>
+                            <button type="submit" class="save-btn">Update Password</button>
+                        </form>
+                    </div>
+                    <div class="settings-card">
+                        <h3>Notification Settings</h3>
+                        <form id="notificationSettingsForm">
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="emailNotifications" checked>
+                                    Email Notifications
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="bookingAlerts" checked>
+                                    Booking Alerts
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="paymentReminders" checked>
+                                    Payment Reminders
+                                </label>
+                            </div>
+                            <button type="submit" class="save-btn">Save Preferences</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Add/Edit Student Modal -->
+    <div class="modal" id="studentModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 id="studentModalTitle">Add New Student</h2>
+            <form id="studentForm">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="studentName" required>
+                </div>
+                <div class="form-group">
+                    <label>Room Type</label>
+                    <select id="studentRoomType" required>
+                        <option value="">Select Room Type</option>
+                        <option value="Single Room">Single Room</option>
+                        <option value="Double Room">Double Room</option>
+                        <option value="Triple Room">Triple Room</option>
+                        <option value="Deluxe Single">Deluxe Single</option>
+                        <option value="Premium Double">Premium Double</option>
+                        <option value="Studio Room">Studio Room</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Room Number</label>
+                    <input type="text" id="studentRoomNumber" required>
+                </div>
+                <div class="form-group">
+                    <label>Check-in Date</label>
+                    <input type="date" id="studentCheckInDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Status</label>
+                    <select id="studentStatus" required>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Save Student</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add/Edit Room Modal -->
+    <div class="modal" id="roomModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 id="roomModalTitle">Add New Room</h2>
+            <form id="roomForm">
+                <div class="form-group">
+                    <label>Room Number</label>
+                    <input type="text" id="roomNumber" required>
+                </div>
+                <div class="form-group">
+                    <label>Room Type</label>
+                    <select id="roomType" required>
+                        <option value="">Select Room Type</option>
+                        <option value="Single Room">Single Room</option>
+                        <option value="Double Room">Double Room</option>
+                        <option value="Triple Room">Triple Room</option>
+                        <option value="Deluxe Single">Deluxe Single</option>
+                        <option value="Premium Double">Premium Double</option>
+                        <option value="Studio Room">Studio Room</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Floor</label>
+                    <input type="number" id="roomFloor" required>
+                </div>
+                <div class="form-group">
+                    <label>Capacity</label>
+                    <input type="number" id="roomCapacity" required>
+                </div>
+                <div class="form-group">
+                    <label>Price per Month</label>
+                    <input type="number" id="roomPrice" required>
+                </div>
+                <div class="form-group">
+                    <label>Status</label>
+                    <select id="roomStatus" required>
+                        <option value="Available">Available</option>
+                        <option value="Occupied">Occupied</option>
+                        <option value="Maintenance">Maintenance</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Save Room</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add/Edit Booking Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 id="bookingModalTitle">Add New Booking</h2>
+            <form id="bookingForm">
+                <input type="hidden" id="bookingId">
+                <div class="form-group">
+                    <label>Student Name</label>
+                    <input type="text" id="bookingStudent" required>
+                </div>
+                <div class="form-group">
+                    <label>Room</label>
+                    <select id="bookingRoom" required>
+                        <option value="">Select Room</option>
+                        <option value="Single Room 101">Single Room 101</option>
+                        <option value="Double Room 202">Double Room 202</option>
+                        <option value="Triple Room 303">Triple Room 303</option>
+                        <option value="Deluxe Single 404">Deluxe Single 404</option>
+                        <option value="Studio Room 505">Studio Room 505</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Check-in Date</label>
+                    <input type="date" id="bookingCheckIn" required>
+                </div>
+                <div class="form-group">
+                    <label>Duration</label>
+                    <select id="bookingDuration" required>
+                        <option value="">Select Duration</option>
+                        <option value="1 month">1 Month</option>
+                        <option value="3 months">3 Months</option>
+                        <option value="6 months">6 Months</option>
+                        <option value="9 months">9 Months</option>
+                        <option value="12 months">12 Months</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Status</label>
+                    <select id="bookingStatus" required>
+                        <option value="Pending">Pending</option>
+                        <option value="Confirmed">Confirmed</option>
+                        <option value="Cancelled">Cancelled</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Save Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html> 

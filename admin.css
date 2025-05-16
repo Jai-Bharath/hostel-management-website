@@ -1,0 +1,656 @@
+/* Admin Login Page */
+.admin-login-page {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+}
+
+.admin-login-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.admin-login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.admin-login-header h1 {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.admin-login-header h2 {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.admin-login-form .form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.admin-login-form .form-group i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.admin-login-form input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.admin-login-form input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.admin-login-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--secondary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.admin-login-btn:hover {
+    background: #f40612;
+    transform: translateY(-2px);
+}
+
+.error-message {
+    color: #ff4444;
+    text-align: center;
+    margin-top: 1rem;
+    display: none;
+}
+
+.back-to-home {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.back-to-home a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.back-to-home a:hover {
+    color: var(--secondary-color);
+}
+
+/* Admin Dashboard */
+.admin-dashboard {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    min-height: 100vh;
+}
+
+.admin-sidebar {
+    background: #1a1a1a;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-logo {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-logo h1 {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.admin-logo span {
+    color: #666;
+}
+
+.admin-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+}
+
+.admin-menu li {
+    margin-bottom: 0.5rem;
+}
+
+.admin-menu a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.admin-menu a:hover,
+.admin-menu li.active a {
+    background: rgba(229, 9, 20, 0.1);
+    color: var(--secondary-color);
+}
+
+.admin-logout {
+    margin-top: auto;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-logout button {
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.admin-logout button:hover {
+    background: var(--secondary-color);
+    color: #fff;
+}
+
+.admin-main {
+    background: #f5f5f5;
+    min-height: 100vh;
+}
+
+.admin-header {
+    background: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.admin-search {
+    position: relative;
+    width: 300px;
+}
+
+.admin-search i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.admin-search input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.admin-notification {
+    position: relative;
+    cursor: pointer;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--secondary-color);
+    color: #fff;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+}
+
+.admin-user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.admin-user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.admin-content {
+    padding: 2rem;
+}
+
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.stat-card i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+.stat-info h3 {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-number {
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.dashboard-tables {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-tables table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.dashboard-tables th,
+.dashboard-tables td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.dashboard-tables th {
+    font-weight: 600;
+    color: #666;
+}
+
+.dashboard-tables tbody tr:hover {
+    background: #f9f9f9;
+}
+
+/* Section Styles */
+.section {
+    display: none;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.section.active-section {
+    display: block;
+}
+
+.section h2 {
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.75rem 2.5rem 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.search-box i {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.filter-box {
+    min-width: 200px;
+}
+
+.filter-box select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    background: #fff;
+}
+
+.add-student-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--secondary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.add-student-btn:hover {
+    background: #f40612;
+    transform: translateY(-2px);
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-bottom: 1rem;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.data-table th,
+.data-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.data-table th {
+    background: #f9f9f9;
+    font-weight: 600;
+    color: #333;
+}
+
+.data-table tbody tr:hover {
+    background: #f5f5f5;
+}
+
+.data-table .status-active {
+    color: #2ecc71;
+    font-weight: 500;
+}
+
+.data-table .status-inactive {
+    color: #e74c3c;
+    font-weight: 500;
+}
+
+.data-table .actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 0.25rem;
+}
+
+.edit-btn {
+    background: #3498db;
+    color: #fff;
+}
+
+.delete-btn {
+    background: #e74c3c;
+    color: #fff;
+}
+
+.action-btn:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.page-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.page-btn:hover:not(:disabled) {
+    background: var(--secondary-color);
+    color: #fff;
+    border-color: var(--secondary-color);
+}
+
+.page-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#currentPage {
+    font-weight: 500;
+    color: #333;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background: #fff;
+    width: 90%;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: var(--secondary-color);
+}
+
+.modal h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.modal .form-group {
+    margin-bottom: 1rem;
+}
+
+.modal .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.modal .form-group input,
+.modal .form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.modal .form-group input:focus,
+.modal .form-group select:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.modal .submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--secondary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.modal .submit-btn:hover {
+    background: #f40612;
+    transform: translateY(-2px);
+}
+
+/* Student Avatar Styles */
+.student-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.student-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Booking Status Styles */
+.status-confirmed {
+    color: #2ecc71;
+    font-weight: 500;
+    background: rgba(46, 204, 113, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+}
+
+.status-pending {
+    color: #f39c12;
+    font-weight: 500;
+    background: rgba(243, 156, 18, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+}
+
+.status-cancelled {
+    color: #e74c3c;
+    font-weight: 500;
+    background: rgba(231, 76, 60, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+} 

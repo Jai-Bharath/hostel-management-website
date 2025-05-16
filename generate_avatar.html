@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Admin Avatar</title>
+</head>
+<body>
+    <canvas id="avatarCanvas" width="200" height="200"></canvas>
+    <script>
+        const canvas = document.getElementById('avatarCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set background
+        ctx.fillStyle = '#3498db';
+        ctx.fillRect(0, 0, 200, 200);
+
+        // Draw circle for head
+        ctx.fillStyle = '#fff';
+        ctx.beginPath();
+        ctx.arc(100, 80, 40, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Draw body
+        ctx.beginPath();
+        ctx.moveTo(100, 120);
+        ctx.quadraticCurveTo(100, 200, 100, 200);
+        ctx.lineTo(150, 200);
+        ctx.quadraticCurveTo(150, 160, 100, 120);
+        ctx.fill();
+
+        // Save the image
+        const link = document.createElement('a');
+        link.download = 'admin-avatar.png';
+        link.href = canvas.toDataURL();
+        link.click();
+    </script>
+</body>
+</html> 

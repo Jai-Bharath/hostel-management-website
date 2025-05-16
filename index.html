@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h1>HostelHub</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#rooms">Rooms</a></li>
+
+            <li><a href="#facilities">Facilities</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <button class="login-btn">Login</button>
+            <a href="admin/admin-login.html"><button class="register-btn">Admin</button></a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Welcome to HostelHub</h1>
+                <p>Your Complete Hostel Management Solution</p>
+                <button class="cta-button">Get Started</button>
+            </div>
+        </section>
+
+        <!-- Rooms Section -->
+        <section id="rooms" class="rooms">
+            <h2>Available Rooms</h2>
+            <div class="room-grid">
+                <div class="room-card glass">
+                    <div class="room-image">
+                        <img src="images/room1.jpg" alt="Single Room">
+                    </div>
+                    <div class="room-content">
+                        <h3>Single Room</h3>
+                        <p>Comfortable single occupancy room with basic amenities</p>
+                        <ul class="room-features">
+                            <li><i class="fas fa-bed"></i> Single Bed</li>
+                            <li><i class="fas fa-bath"></i> Attached Bathroom</li>
+                            <li><i class="fas fa-tv"></i> TV</li>
+                        </ul>
+                        <div class="room-price">
+                            <span>$299/month</span>
+                        </div>
+                        <button class="book-btn">Book Now</button>
+                    </div>
+                </div>
+                <div class="room-card glass">
+                    <div class="room-image">
+                        <img src="images/room2.jpg" alt="Double Room">
+                    </div>
+                    <div class="room-content">
+                        <h3>Double Room</h3>
+                        <p>Spacious double occupancy room with shared facilities</p>
+                        <ul class="room-features">
+                            <li><i class="fas fa-bed"></i> Two Beds</li>
+                            <li><i class="fas fa-bath"></i> Shared Bathroom</li>
+                            <li><i class="fas fa-desktop"></i> Study Table</li>
+                        </ul>
+                        <div class="room-price">
+                            <span>$399/month</span>
+                        </div>
+                        <button class="book-btn">Book Now</button>
+                    </div>
+                </div>
+                <div class="room-card glass">
+                    <div class="room-image">
+                        <img src="images/room3.jpg" alt="Triple Room">
+                    </div>
+                    <div class="room-content">
+                        <h3>Triple Room</h3>
+                        <p>Triple occupancy room with enhanced facilities</p>
+                        <ul class="room-features">
+                            <li><i class="fas fa-bed"></i> Three Beds</li>
+                            <li><i class="fas fa-bath"></i> Attached Bathroom</li>
+                            <li><i class="fas fa-wifi"></i> High-Speed WiFi</li>
+                        </ul>
+                        <div class="room-price">
+                            <span>$299/month</span>
+                        </div>
+                        <button class="book-btn">Book Now</button>
+                    </div>
+                </div>
+                <div class="room-card glass">
+                    <div class="room-image">
+                        <img src="images/room4.jpg" alt="Deluxe Single">
+                    </div>
+                    <div class="room-content">
+                        <h3>Deluxe Single</h3>
+                        <p>Premium single room with luxury amenities</p>
+                        <ul class="room-features">
+                            <li><i class="fas fa-bed"></i> Queen Bed</li>
+                            <li><i class="fas fa-bath"></i> Private Bathroom</li>
+                            <li><i class="fas fa-coffee"></i> Mini Kitchen</li>
+                        </ul>
+                        <div class="room-price">
+                            <span>$499/month</span>
+                        </div>
+                        <button class="book-btn">Book Now</button>
+                    </div>
+                </div>
+                <div class="room-card glass">
+                    <div class="room-image">
+                        <img src="images/room5.jpg" alt="Premium Double">
+                    </div>
+                    <div class="room-content">
+                        <h3>Premium Double</h3>
+                        <p>Luxury double room with all modern facilities</p>
+                        <ul class="room-features">
+                            <li><i class="fas fa-bed"></i> Two Queen Beds</li>
+                            <li><i class="fas fa-bath"></i> Luxury Bathroom</li>
+                            <li><i class="fas fa-couch"></i> Lounge Area</li>
+                        </ul>
+                        <div class="room-price">
+                            <span>$599/month</span>
+                        </div>
+                        <button class="book-btn">Book Now</button>
+                    </div>
+                </div>
+                <div class="room-card glass">
+                    <div class="room-image">
+                        <img src="images/room6.jpg" alt="Studio Room">
+                    </div>
+                    <div class="room-content">
+                        <h3>Studio Room</h3>
+                        <p>Self-contained studio with kitchen facilities</p>
+                        <ul class="room-features">
+                            <li><i class="fas fa-bed"></i> Double Bed</li>
+                            <li><i class="fas fa-kitchen-set"></i> Full Kitchen</li>
+                            <li><i class="fas fa-chair"></i> Living Space</li>
+                        </ul>
+                        <div class="room-price">
+                            <span>$699/month</span>
+                        </div>
+                        <button class="book-btn">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Facilities Section -->
+        <section id="facilities" class="facilities">
+            <h2>Our Facilities</h2>
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <i class="fas fa-wifi"></i>
+                    <h3>Free Wi-Fi</h3>
+                    <p>High-speed internet access</p>
+                </div>
+                <div class="facility-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Dining Hall</h3>
+                    <p>24/7 cafeteria service</p>
+                </div>
+                <div class="facility-card">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Gym</h3>
+                    <p>Modern fitness equipment</p>
+                </div>
+                <div class="facility-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Study Room</h3>
+                    <p>Quiet study environment</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <form id="contact-form">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 Hostel Street, City, Country</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+1 234 567 890</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@hostelhub.com</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>HostelHub provides comfortable and affordable accommodation for students and travelers.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#rooms">Rooms</a></li>
+                    <li><a href="#facilities">Facilities</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 HostelHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 
