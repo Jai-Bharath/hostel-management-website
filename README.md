@@ -121,11 +121,9 @@ hostel_management/
 
 ## 🛠️ Technology Stack
 - **Frontend**
-  - HTML5
-  - CSS3
+  - HTML
+  - CSS
   - JavaScript
-  - Bootstrap 5
-  - jQuery
 - **Backend**
   - PHP 7.4+
   - MySQL 5.7+
