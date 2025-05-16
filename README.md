@@ -163,7 +163,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - All contributors who helped with the project
 
 ## 📞 Support
-For support, email hostelmanagement.email@example.com or create an issue in the repository.
+For support, email hostelmanagement@gmail.com or create an issue in the repository.
 
 ---
 ⭐️ Star this repo if you find it helpful! 
